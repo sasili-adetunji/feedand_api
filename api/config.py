@@ -32,7 +32,7 @@ class ProductionConfig(BaseConfig):
 
 
 app_configuration = {
-    'production': ConfigWithCustomDBEngineParams,
-    'development': DevelopmentConfiguration,
-    'testing': TestingConfiguration
+    'production': ProductionConfig,
+    'development': DevelopmentConfig,
+    'testing': TestingConfig
 }
