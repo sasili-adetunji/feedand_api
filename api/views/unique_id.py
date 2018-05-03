@@ -1,7 +1,6 @@
+import numpy
 from random import random
 from time import time
-import numpy
-
 
 class PushID(object):
     '''
