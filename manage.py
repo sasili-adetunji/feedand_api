@@ -1,7 +1,7 @@
 import os
 import unittest
 import coverage
-from api import app, db
+from main import app, db
 from flask_script import Manager
 from flask_migrate import Migrate, MigrateCommand
 
