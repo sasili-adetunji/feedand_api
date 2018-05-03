@@ -5,7 +5,7 @@ from .model_mixin import ModelMixin, db, app
 
 class User(ModelMixin):
     """ User Model for storing user related details """
-    __tablename__ = "users"
+    __tablename__ = "User"
 
     user_id = db.Column(db.String(255), primary_key=True, nullable=False)
     email = db.Column(db.String(255), unique=True, nullable=False)
