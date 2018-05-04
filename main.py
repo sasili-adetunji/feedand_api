@@ -1,21 +1,21 @@
-import os
+# import os
 
-from flask import Flask, Blueprint
-from flask_bcrypt import Bcrypt
-from flask_sqlalchemy import SQLAlchemy
-from flask_cors import CORS
+# from flask import Flask, Blueprint
+# from flask_bcrypt import Bcrypt
+# from flask_sqlalchemy import SQLAlchemy
+# from flask_cors import CORS
 
-app = Flask(__name__)
-CORS(app)
+# app = Flask(__name__)
+# CORS(app)
 
-app_settings = os.getenv(
-    'APP_SETTINGS',
-    'api.config.DevelopmentConfig'
-)
-app.config.from_object(app_settings)
+# app_settings = os.getenv(
+#     'APP_SETTINGS',
+#     'api.config.DevelopmentConfig'
+# )
+# app.config.from_object(app_settings)
 
-bcrypt = Bcrypt(app)
-db = SQLAlchemy(app)
+# bcrypt = Bcrypt(app)
+# db = SQLAlchemy(app)
 
 from api.blueprint.ex import dummy_blueprint, admin_reg_blueprint, admin_login_blueprint, user_book_meal_blueprint
 
