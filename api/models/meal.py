@@ -10,8 +10,11 @@ class Meal(ModelMixin):
     meal_period = db.Column(db.String(15), unique=True, nullable=False)
     username = db.Column(db.String(255), nullable=False)
 
+    meal_detail_meal = db.relationship('MealDetail', backref='meal', lazy='dynamic')
+
     def __init__(self, _id, date, meal_period, username):
         self._id = _id
         self.date = date
         self. meal_period = meal_period
         self.username = username
+        self.meal_detail_meal = meal_detail_meal

@@ -1,17 +1,19 @@
 from .model_mixin import ModelMixin, db
 
-class MenuDetails(ModelMixin):
+class MenuDetail(ModelMixin):
     """MenuDetails Model for storing all the details in the menu """
-    __tablename__ = "MenuDetails"
+    __tablename__ = "MenuDetail"
 
     _id = db.Column(db.String(255), primary_key=True, nullable=False)
     menu_id = db.Column(db.String(), db.ForeignKey("Menu._id"))
     menu_name = db.Column(db.String(255), unique=True, nullable=False)
     category_id = db.Column(db.String(255), db.ForeignKey("Category._id"))
 
+    menu_detial_meal = db.relationship('MealDetail', backref='menu_detail', lazy='dynamic')
 
     def __init__(self, _id, menu_id, category_id):
         self._id = _id
         self.menu_id = menu_id
         self.menu_name = menu_name
         self.category_id = category_id
+        self.menu_detial_meal = menu_detial_meal
