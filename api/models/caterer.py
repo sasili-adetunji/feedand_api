@@ -13,8 +13,9 @@ class Caterer(ModelMixin):
     isActive = db.Column(db.Boolean, default=True)
     isCurrent = db.Column(db.Boolean, default=True)
     caterer_menu = db.relationship('Menu', backref='caterer', lazy='dynamic')
+    caterer_log_caterer = db.relationship('CatererLog', backref='caterer', lazy='dynamic')
 
-    def __init__(self, _id, caterer_name, description, engagement_start, engagement_end, isActive, isCurrent):
+    def __init__(self, _id, caterer_name, description, engagement_start, engagement_end, isActive, isCurrent, caterer_menu, caterer_log_caterer):
         self._id = _id
         self.caterer_name = caterer_name
         self.description = description
@@ -23,3 +24,4 @@ class Caterer(ModelMixin):
         self.caterer_menu = caterer_menu
         self.isActive = isActive
         self.isCurrent = isCurrent
+        self.caterer_log_caterer = caterer_log_caterer
