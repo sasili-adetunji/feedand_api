@@ -4,8 +4,13 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.exc import SQLAlchemyError
 from api import db, app
 
+def to_camel_case(snake_str):
+    """Format string to camel case."""
+    title_str = snake_str.title().replace("_", "")
+    return title_str[0].lower() + title_str[1:]
 
 class ModelMixin(db.Model):
+    
     """Base models.
 
     - Contains the serialize method to convert objects to a dictionary

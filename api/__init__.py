@@ -22,4 +22,7 @@ from api.blueprint.ex import dummy_blueprint, admin_reg_blueprint, admin_login_b
 app.register_blueprint(dummy_blueprint)
 app.register_blueprint(admin_reg_blueprint)
 app.register_blueprint(admin_login_blueprint)
+app.register_blueprint(menu_blueprint)
+app.register_blueprint(menu_item_blueprint)
+app.register_blueprint(feedback_blueprint)
 
