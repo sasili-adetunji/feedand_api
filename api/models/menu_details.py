@@ -10,7 +10,7 @@ class MenuDetails(ModelMixin):
     category_id = db.Column(db.String(255), db.ForeignKey("Category._id"))
 
 
-    def __init__(self, _id, menu_id, category_id):
+    def __init__(self, _id, menu_id, menu_name, category_id):
         self._id = _id
         self.menu_id = menu_id
         self.menu_name = menu_name

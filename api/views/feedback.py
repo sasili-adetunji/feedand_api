@@ -17,14 +17,14 @@ class FeedBackAPI(MethodView):
         # get the post data
         post_data = request.get_json()
         # check if menu exists
-        meal = Meal.query.filter_by(_id=post_data.get('meal_id')).first()
+        meal = Meal.query.filter_by(_id=post_data.get('mealId')).first()
         if not meal:
             return response_object('fail', 'This meal does not exist', 400)
         else:
             try:
                 feedback = FeedBack(
                     _id = PushID().next_id(),
-                    meal_id=post_data.get('menuId'),
+                    meal_id=post_data.get('mealId'),
                     comment=post_data.get('comment'),
                     comment_by=post_data.get('commentBy'),
                     rating=post_data.get('rating')
@@ -34,7 +34,8 @@ class FeedBackAPI(MethodView):
                 feedback.save()
                 responseObject = {
                     'status': 'success',
-                    'message': 'Feed back successfully added',
+                    'data': feedback.serialize(),
+                    'message': 'Feed back successfully added'
                 }
                 return make_response(jsonify(responseObject)), 201
             except Exception as e:
