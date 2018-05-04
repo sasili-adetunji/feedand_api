@@ -7,10 +7,9 @@ class MealDetail(ModelMixin):
     _id = db.Column(db.String(255), primary_key=True, nullable=False)
     meal_id = db.Column(db.String(), db.ForeignKey('Meal._id'))
     menu_detail_id = db.Column(db.String(), db.ForeignKey('MenuDetail._id'))
-    meal_master = db.relationship('Meal', backref='meal_detail', lazy='dynamic')
+    meal_master = db.relationship('Meal', backref='meal_detail')
 
-    def __init__(self, _id, meal_id, menu_detail_id, meal_master):
+    def __init__(self, _id, meal_id, menu_detail_id):
         self._id = _id
         self.meal_id = meal_id
         self.menu_detail_id = menu_detail_id
-        self.meal_master = meal_master
