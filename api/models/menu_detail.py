@@ -11,9 +11,8 @@ class MenuDetail(ModelMixin):
 
     menu_detail_meal = db.relationship('MealDetail', backref='menu_detail', lazy='dynamic')
 
-    def __init__(self, _id, menu_id, category_id, menu_name, menu_detail_meal):
+    def __init__(self, _id, menu_id, category_id, menu_name):
         self._id = _id
         self.menu_id = menu_id
         self.menu_name = menu_name
         self.category_id = category_id
-        self.menu_detail_meal = menu_detail_meal

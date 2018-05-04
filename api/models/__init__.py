@@ -6,3 +6,4 @@ from .menu import Menu
 from .caterer import Caterer
 from .meal_detail import MealDetail
 from .caterer_log import CatererLog
+from .feedback import FeedBack
