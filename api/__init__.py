@@ -18,19 +18,27 @@ bcrypt = Bcrypt(app)
 db = SQLAlchemy(app)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 from api.blueprint.ex import dummy_blueprint, admin_reg_blueprint, admin_login_blueprint, menu_blueprint, menu_item_blueprint, feedback_blueprint, user_book_meal_blueprint
 =======
 from api.blueprint.ex import dummy_blueprint, admin_reg_blueprint, admin_login_blueprint
 >>>>>>> edit the deploy config
+=======
+from api.blueprint.ex import dummy_blueprint, admin_reg_blueprint, admin_login_blueprint, caterer_blueprint
+>>>>>>> add caterer endpoints
 
 app.register_blueprint(dummy_blueprint)
 app.register_blueprint(admin_reg_blueprint)
 app.register_blueprint(admin_login_blueprint)
+<<<<<<< HEAD
 <<<<<<< HEAD
 app.register_blueprint(menu_blueprint)
 app.register_blueprint(menu_item_blueprint)
 app.register_blueprint(feedback_blueprint)
 app.register_blueprint(user_book_meal_blueprint)
 =======
+=======
+app.register_blueprint(caterer_blueprint)
+>>>>>>> add caterer endpoints
 
 >>>>>>> edit the deploy config
