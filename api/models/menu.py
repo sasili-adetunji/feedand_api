@@ -10,7 +10,7 @@ class Menu(ModelMixin):
     caterer_id = db.Column(db.String(), db.ForeignKey('Caterer._id'))
     date = db.Column(db.DateTime, nullable=False, default=datetime.datetime.now())
 
-    def __init__(self, _id, meal_period, caterer_id):
+    def __init__(self, _id, meal_period, caterer_id, date):
         self._id = _id
         self.meal_period = meal_period
         self.caterer_id = caterer_id
