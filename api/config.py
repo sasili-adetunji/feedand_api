@@ -4,6 +4,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 postgres_local_base = os.environ.get('SQLALCHEMY_DATABASE_URI')
 postgres_local_base_test = os.environ.get('SQLALCHEMY_DATABASE_URI_TEST')
+postgres_production = os.environ.get('SQLALCHEMY_DATABASE_URI_PROD')
 
 # database_name = 'feedand_api'
 
@@ -29,7 +30,7 @@ class TestingConfig(BaseConfig):
 class ProductionConfig(BaseConfig):
     """Production configuration"""
     DEBUG = False
-    SQLALCHEMY_DATABASE_URI = 'postgresql:///example'
+    SQLALCHEMY_DATABASE_URI = postgres_production
 
 
 
