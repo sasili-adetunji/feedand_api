@@ -1,1 +1,1 @@
-web: gunicorn api:app
+web: uwsgi uwsgi.ini
