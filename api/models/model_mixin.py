@@ -2,7 +2,7 @@
 from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.exc import SQLAlchemyError
-from main import db, app
+from api import db, app
 
 
 class ModelMixin(db.Model):

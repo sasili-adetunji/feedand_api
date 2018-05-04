@@ -5,7 +5,7 @@ from api.models import User
 from api.helpers import validate_request, hash_pwd
 from .unique_id import PushID
 from ..errors import response_object
-from main import bcrypt
+from api import bcrypt
 
 
 class AdminLoginAPI(MethodView):
@@ -35,4 +35,5 @@ class AdminLoginAPI(MethodView):
             else:
                 return response_object('fail', 'Login credentials is incorrect.', 404)
         except Exception as e:
+            print(e)
             return response_object('fail', 'Try again', 500)
