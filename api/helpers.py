@@ -1,6 +1,6 @@
 from flask import request, make_response, jsonify
 from functools import wraps
-from main import app, bcrypt
+from api import app, bcrypt
 
 
 def hash_pwd(password):
