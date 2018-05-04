@@ -1,7 +1,7 @@
 from flask import Blueprint, request, make_response, jsonify
 import datetime
 from flask.views import MethodView
-from api.models import MenuDetails, Menu
+from api.models import MenuDetail, Menu
 from api.helpers import validate_request, hash_pwd
 from .unique_id import PushID
 from ..errors import response_object
@@ -21,7 +21,7 @@ class MenuDetailAPI(MethodView):
             return response_object('fail', 'This menu does not exist', 400)
         else:
             try:
-                menuDetails = MenuDetails(
+                menuDetails = MenuDetail(
                     _id = PushID().next_id(),
                     menu_id=post_data.get('menuId'),
                     menu_name=post_data.get('menuName'),
