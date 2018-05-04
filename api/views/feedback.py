@@ -27,7 +27,8 @@ class FeedBackAPI(MethodView):
                     meal_id=post_data.get('mealId'),
                     comment=post_data.get('comment'),
                     comment_by=post_data.get('commentBy'),
-                    rating=post_data.get('rating')
+                    rating=post_data.get('rating'),
+                    date=post_data.get('date')
                 )
 
                 # insert the user

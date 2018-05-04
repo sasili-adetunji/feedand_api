@@ -42,7 +42,7 @@ menu_item_blueprint.add_url_rule(
 
 feedback_blueprint.add_url_rule(
     '/api/andelans/postfeedback',
-    view_func=menu_view,
+    view_func=feedback_view,
     methods=['POST']
 )
 
