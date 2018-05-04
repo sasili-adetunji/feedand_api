@@ -1,7 +1,7 @@
 from flask import Blueprint, request, make_response, jsonify
 from datetime import datetime
 from flask.views import MethodView
-from api.models import User, Category, Meal, MenuDetails, Menu, Caterer
+from api.models import User, Category, Meal, MenuDetails, Menu, Caterer, FeedBack
 
 
 
